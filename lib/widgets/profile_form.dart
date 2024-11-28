@@ -10,7 +10,7 @@ class ProfileForm extends StatefulWidget {
 }
 
 class _ProfileFormState extends State<ProfileForm> {
-  final _formkey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
   ProfileModel _profile = ProfileModel();
 
   @override
@@ -28,8 +28,8 @@ class _ProfileFormState extends State<ProfileForm> {
   }
 
   void _saveProfile() {
-    if (_formkey.currentState!.validate()) {
-      _formkey.currentState!.save();
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
       Provider.of<ProfileProvider>(context, listen: false)
           .updateProfile(_profile);
     }
